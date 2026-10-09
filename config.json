@@ -106,7 +106,7 @@
   ],
   "tos_endpoint": "tos-ap-southeast-1.bytepluses.com",
   "tos_region": "ap-southeast-1",
-  "tos_bucket": "portobuild",
+  "tos_bucket": "your-bucket-name",
   "tos_key_prefix_template": "site/brand/{slug}",
   "local_publish_dir": ""
 }

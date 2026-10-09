@@ -17,8 +17,9 @@ python scripts/check_setup.py --live     # verifies Python, packages, config, ke
 ```
 
 - **Ark API key**: `model_ark_key`, from the env var or `credential.json` (the env var wins).
-- **TOS publishing** (optional): `tos_access_key_id` / `tos_secret_access_key`, from
-  `credential.json` or env vars (`credential.json` wins). Bucket/endpoint are in `config.json`.
+- **TOS publishing** (optional): `tos_access_key_id` / `tos_secret_access_key` / `tos_bucket`,
+  from `credential.json` or env vars (`credential.json` wins). `config.json` ships a placeholder
+  bucket (`your-bucket-name`) and holds the endpoint/region/key prefix.
 - **Network access**: the Ark endpoint (`maas_api_endpoint`) and the TOS endpoint. Pages load
   Google Fonts when viewed.
 - `credential.json` and the `_*/` working folders are gitignored, so a fresh clone needs its

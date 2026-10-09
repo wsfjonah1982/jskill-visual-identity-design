@@ -88,11 +88,23 @@ def check_credentials(config: dict) -> None:
     tos = {k: credential(k, env_first=False) for k in ("tos_access_key_id", "tos_secret_access_key")}
     have = [k for k, (v, _) in tos.items() if v]
     if len(have) == 2:
-        report(OK, "TOS keys", f"publishing to {config.get('tos_bucket') or '?'}")
+        bucket = tos_bucket(config)
+        report(OK if bucket else FAIL, "TOS keys", f"publishing to {bucket}" if bucket else
+               "keys set but no bucket: add tos_bucket to credential.json")
     elif not have:
         report(WARN, "TOS keys", "not set — publishing is optional; pages stay local")
     else:
         report(FAIL, "TOS keys", "only one of tos_access_key_id / tos_secret_access_key is set")
+
+
+def tos_bucket(config: dict) -> str | None:
+    """Same resolution as publish_site.py: credential.json / $tos_bucket, then config.json,
+    ignoring the shipped placeholder."""
+    from credentials import load_bucket
+    try:
+        return load_bucket(config)
+    except KeyError:
+        return None
 
 
 def check_live(config: dict) -> None:
@@ -109,12 +121,13 @@ def check_live(config: dict) -> None:
             report(FAIL, "Ark API key (live)", f"network error: {exc}")
     ak, _ = credential("tos_access_key_id", env_first=False)
     sk, _ = credential("tos_secret_access_key", env_first=False)
-    if ak and sk:
+    bucket = tos_bucket(config)
+    if ak and sk and bucket:
         try:
             from tos_client import list_objects
-            list_objects(config["tos_endpoint"], config["tos_region"], config["tos_bucket"], ak, sk,
+            list_objects(config["tos_endpoint"], config["tos_region"], bucket, ak, sk,
                          prefix="setup-check-nonexistent/")
-            report(OK, "TOS keys (live)", f"bucket {config['tos_bucket']} reachable")
+            report(OK, "TOS keys (live)", f"bucket {bucket} reachable")
         except Exception as exc:
             report(FAIL, "TOS keys (live)", str(exc)[:160])
 

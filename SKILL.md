@@ -211,14 +211,14 @@ record to `_project/log/<output>.log` (prompt, size, tokens, timing, status).
 | `evaluation_criteria` | Scoring criteria + weights (sum 100) used by the page | fit 20, distinct 15, memorable 15, versatile 10, craft 15, story 10, card 10, coherence 5 |
 | `watermark` | Watermark on outputs | `false` |
 | `styles` / `default_style` | Style menu | 12 styles / `Modern Geometric` |
-| `tos_endpoint` / `tos_region` / `tos_bucket` / `tos_key_prefix_template` | Publishing target | `tos-ap-southeast-1.bytepluses.com` / `ap-southeast-1` / `portobuild` / `site/brand/{slug}` |
+| `tos_endpoint` / `tos_region` / `tos_bucket` / `tos_key_prefix_template` | Publishing target | `tos-ap-southeast-1.bytepluses.com` / `ap-southeast-1` / `your-bucket-name` (placeholder: the real bucket goes in `credential.json` `tos_bucket`) / `site/brand/{slug}` |
 | `local_publish_dir` | Where `publish_site.py` copies the site when TOS keys aren't set (empty = leave it in place) | `""` |
 
 This column is a snapshot. `config.json` is the source of truth; update this table whenever
 you change it on the user's instruction.
 
 Secrets: `model_ark_key` (env var first, then `credential.json`), plus `tos_access_key_id` /
-`tos_secret_access_key` for publishing (`credential.json` first, then env vars). Copy
+`tos_secret_access_key` / `tos_bucket` for publishing (`credential.json` first, then env vars). Copy
 `credential_tmp.json`; `credential.json` is gitignored. Prerequisites: Python 3.10+ and
 `pip install -r requirements.txt` (`requests`, `Pillow>=10.1`). In a new environment, run
 `python scripts/check_setup.py --live` first. It's free and checks packages, config and both keys.
