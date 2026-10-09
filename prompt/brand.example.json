@@ -1,0 +1,216 @@
+{
+  "name": "Ember Lane",
+  "industry": "food & beverage",
+  "business_type": "restaurant",
+  "business_idea": "a casual Southeast Asian charcoal-grill restaurant in a city laneway, serving satay, grilled fish and shared plates late into the evening",
+  "audience": "25–45 year-old city diners and friend groups looking for a lively, affordable night out",
+  "location": "Singapore",
+  "contact": {},
+  "ideas": [
+    {
+      "id": 1,
+      "title": "Hearth Heritage",
+      "summary": "A vintage hawker-stall badge that says 'we've been grilling like this for generations'.",
+      "rationale": "Leans into authenticity and craft — the strongest trust signal for a grill restaurant; badge works on signage, aprons and stamps.",
+      "style": "Heritage / Vintage Craft",
+      "style_descriptor": "heritage craft aesthetic, vintage hawker-stall badge influences, classic serif lettering, warm muted inks, subtle letterpress texture, established and trustworthy",
+      "personality": ["authentic", "warm", "generous", "time-honoured"],
+      "tagline": "Grilled the old way",
+      "palette": [
+        { "name": "Oxblood",   "hex": "#6E1E1E", "role": "primary",   "description": "deep oxblood red" },
+        { "name": "Rice Paper","hex": "#F2E8D5", "role": "neutral",   "description": "warm rice-paper cream" },
+        { "name": "Brass",     "hex": "#B08A3E", "role": "accent",    "description": "muted antique brass gold" },
+        { "name": "Charcoal",  "hex": "#2A2623", "role": "secondary", "description": "warm charcoal black" }
+      ],
+      "typography": { "display": "Libre Caslon Display", "body": "Source Sans 3", "feel": "a classic high-contrast serif in capitals, slightly condensed, arched along the badge" },
+      "logo": {
+        "type": "emblem badge",
+        "description": "a round badge with the name \"Ember Lane\" arched across the top, a small grill with three rising flame curls in the centre, and two short horizontal rules either side",
+        "colors": "deep oxblood red on warm rice-paper cream, with a thin antique brass inner ring"
+      },
+      "story": {
+        "headline": "Three generations of fire",
+        "narrative": "From a grandfather's pushcart grill to a laneway restaurant — the same charcoal, the same recipes.",
+        "scenes": [
+          "an old pushcart satay grill on a 1960s street at dusk, smoke curling up",
+          "hands fanning glowing charcoal under rows of satay skewers",
+          "a lively modern laneway restaurant at night with friends sharing plates under string lights"
+        ],
+        "layout": "three connected vignettes flowing left to right like a vintage storybook print"
+      },
+      "card": {
+        "front": "the badge logo centred on a solid deep oxblood background, printed in warm cream",
+        "back": "warm rice-paper cream with a thin brass border and small placeholder contact lines bottom left",
+        "material": "thick cotton letterpress card stock with visible deboss",
+        "scene": "on a dark wooden table beside a small bowl of peanut sauce"
+      },
+      "imagery": "warm tungsten-lit documentary photography, smoke and charcoal glow, film grain",
+      "avoid": ["cartoon flames", "neon colours", "glossy plastic textures"],
+      "ai_review": {
+        "scores": { "fit": 5, "distinct": 3, "memorable": 4, "versatile": 3, "craft": 4, "story": 5, "card": 4, "coherence": 5 },
+        "comment": "EXAMPLE ONLY — replace after reviewing the real renders. Strongest category fit and story; badge detail will blur below ~24px.",
+        "flags": []
+      }
+    },
+    {
+      "id": 2,
+      "title": "Modern Ember",
+      "summary": "A crisp geometric mark where a laneway's perspective lines become a flame.",
+      "rationale": "Clean and contemporary — stands out from the heritage-heavy category and scales perfectly to app icons and delivery bags.",
+      "style": "Modern Geometric",
+      "style_descriptor": "modern geometric design, clean constructed shapes, balanced proportions, confident flat colour, crisp and contemporary",
+      "personality": ["confident", "modern", "energetic", "urban"],
+      "tagline": "Fire at the end of the lane",
+      "palette": [
+        { "name": "Coal",       "hex": "#1E1F22", "role": "primary",   "description": "near-black coal grey" },
+        { "name": "Ember",      "hex": "#F2622E", "role": "accent",    "description": "bright ember orange" },
+        { "name": "Ash",        "hex": "#F4F2EE", "role": "neutral",   "description": "soft ash white" },
+        { "name": "Smoke",      "hex": "#8C8A86", "role": "secondary", "description": "mid smoke grey" }
+      ],
+      "typography": { "display": "Outfit", "body": "Inter", "feel": "a geometric sans-serif, medium weight, generous letter spacing" },
+      "logo": {
+        "type": "symbol + wordmark (combination mark)",
+        "description": "two converging straight lines forming a lane in perspective, whose vanishing point becomes a simple geometric flame, placed left of the wordmark \"Ember Lane\"",
+        "colors": "near-black coal grey with the flame in bright ember orange"
+      },
+      "story": {
+        "headline": "Follow the glow",
+        "narrative": "Down a quiet lane, one warm light — follow it to the grill.",
+        "scenes": [
+          "a quiet city laneway at night seen in strong perspective",
+          "an orange glow and smoke at the far end of the lane",
+          "a sleek open grill counter with chefs and diners lit in ember orange"
+        ],
+        "layout": "three panels with the lane's perspective lines running continuously through all of them"
+      },
+      "card": {
+        "front": "the symbol alone in bright ember orange on solid near-black coal",
+        "back": "soft ash white with the full logo top left and placeholder contact lines below, generous white space",
+        "material": "smooth heavy matte card with an ember-orange painted edge",
+        "scene": "on a concrete surface with hard directional light"
+      },
+      "imagery": "high-contrast night photography, ember highlights, clean architectural lines",
+      "avoid": ["vintage textures", "script lettering", "clip-art flames"]
+    },
+    {
+      "id": 3,
+      "title": "Night Market Joy",
+      "summary": "A playful, hand-lettered street-food brand full of colour and noise.",
+      "rationale": "Captures the fun, shared, late-night energy — best for social media and a younger crowd.",
+      "style": "Playful & Friendly",
+      "style_descriptor": "playful friendly street-food design, rounded chunky hand-lettering, bouncy energetic composition, bright cheerful flat colours, approachable and warm",
+      "personality": ["fun", "loud", "social", "welcoming"],
+      "tagline": "Come hungry, stay late",
+      "palette": [
+        { "name": "Chili",     "hex": "#E0352B", "role": "primary",   "description": "bright chili red" },
+        { "name": "Turmeric",  "hex": "#F6B932", "role": "accent",    "description": "warm turmeric yellow" },
+        { "name": "Pandan",    "hex": "#3E8E5A", "role": "secondary", "description": "fresh pandan leaf green" },
+        { "name": "Coconut",   "hex": "#FFF8EC", "role": "neutral",   "description": "creamy coconut white" }
+      ],
+      "typography": { "display": "Baloo 2", "body": "Nunito Sans", "feel": "rounded chunky hand-lettered letters with a slight bounce" },
+      "logo": {
+        "type": "wordmark with a small character accent",
+        "description": "a bouncy rounded hand-lettered wordmark \"Ember Lane\" with a smiling satay skewer replacing the letter L",
+        "colors": "bright chili red letters with a turmeric yellow skewer"
+      },
+      "story": {
+        "headline": "Grab a stick, grab a seat",
+        "narrative": "Smoke, chatter and too many skewers — the night market feeling, every night.",
+        "scenes": [
+          "friends arriving at a busy colourful laneway at night",
+          "a table piled with satay, grilled fish and drinks, hands reaching in",
+          "the group laughing together under strings of lanterns"
+        ],
+        "layout": "a lively comic-strip of three rounded panels"
+      },
+      "card": {
+        "front": "the wordmark on bright turmeric yellow",
+        "back": "creamy coconut white with a scattered pattern of tiny skewers and placeholder contact lines",
+        "material": "bright uncoated card with rounded corners",
+        "scene": "on a colourful plastic stool top with a satay stick beside it"
+      },
+      "imagery": "flash-lit candid photography of friends and food, saturated colour",
+      "avoid": ["muted colours", "serif fonts", "formal layouts"]
+    },
+    {
+      "id": 4,
+      "title": "Quiet Coals",
+      "summary": "A restrained, premium identity built on a single brush stroke of glowing coal.",
+      "rationale": "Positions Ember Lane as a chef-led destination — supports higher prices and a date-night audience.",
+      "style": "Japanese Minimal",
+      "style_descriptor": "Japanese-inspired minimalism, quiet balance, asymmetric composition, ample negative space, natural muted tones, a single confident brush stroke",
+      "personality": ["refined", "calm", "crafted", "intimate"],
+      "tagline": "Slow fire",
+      "palette": [
+        { "name": "Sumi",      "hex": "#1B1A19", "role": "primary",   "description": "sumi ink black" },
+        { "name": "Washi",     "hex": "#EFEBE3", "role": "neutral",   "description": "soft washi paper white" },
+        { "name": "Persimmon", "hex": "#D9643A", "role": "accent",    "description": "muted persimmon orange" },
+        { "name": "Stone",     "hex": "#9A958C", "role": "secondary", "description": "warm stone grey" }
+      ],
+      "typography": { "display": "Noto Serif JP", "body": "Zen Kaku Gothic New", "feel": "a light elegant serif in small capitals with wide spacing" },
+      "logo": {
+        "type": "symbol + wordmark (stacked)",
+        "description": "a single round ink brush stroke forming an open circle with one small persimmon-orange dot inside like a glowing coal, above the wordmark \"Ember Lane\"",
+        "colors": "sumi ink black with one persimmon orange dot"
+      },
+      "story": {
+        "headline": "Slow fire",
+        "narrative": "One fire, tended all evening. Nothing rushed.",
+        "scenes": [
+          "a single glowing coal close up in darkness",
+          "a chef's hands placing a skewer over the charcoal with care",
+          "a calm, softly lit dining counter with two guests"
+        ],
+        "layout": "an asymmetric composition with one large vignette and two small ones, lots of empty space"
+      },
+      "card": {
+        "front": "the brush-stroke symbol only, small and off-centre on soft washi white",
+        "back": "sumi ink black with the wordmark and placeholder contact lines in light grey",
+        "material": "textured handmade washi-style paper with deckled edges",
+        "scene": "on a pale stone surface beside a small ceramic dish"
+      },
+      "imagery": "low-key moody photography, single light source, dark backgrounds, steam and smoke",
+      "avoid": ["bright saturated colours", "busy patterns", "cartoon elements"]
+    },
+    {
+      "id": 5,
+      "title": "Lane Lights 70s",
+      "summary": "A sunny retro identity of rounded stripes and soft-serif lettering, like a vintage beach-road diner sign.",
+      "rationale": "Nostalgic and photogenic — a strong Instagram identity that differs from every grill competitor.",
+      "style": "Retro 70s",
+      "style_descriptor": "retro 1970s graphic style, warm sunset colours, groovy soft-serif lettering, rounded stripes and arches, sunny nostalgic optimism",
+      "personality": ["nostalgic", "sunny", "easy-going", "photogenic"],
+      "tagline": "Grill's on, lights up",
+      "palette": [
+        { "name": "Burnt Orange", "hex": "#D3622B", "role": "primary",   "description": "burnt orange" },
+        { "name": "Mustard",      "hex": "#E2A93B", "role": "secondary", "description": "warm mustard yellow" },
+        { "name": "Cocoa",        "hex": "#5A3524", "role": "accent",    "description": "deep cocoa brown" },
+        { "name": "Cream",        "hex": "#F6E9D2", "role": "neutral",   "description": "warm vintage cream" }
+      ],
+      "typography": { "display": "Shrikhand", "body": "DM Sans", "feel": "a chunky soft retro serif with rounded terminals" },
+      "logo": {
+        "type": "wordmark with arch symbol",
+        "description": "the wordmark \"Ember Lane\" in a chunky soft retro serif, sitting under a half-sun arch made of three rounded stripes",
+        "colors": "deep cocoa brown lettering with burnt orange, mustard and cream stripes"
+      },
+      "story": {
+        "headline": "Golden hour, every hour",
+        "narrative": "Sunset colours, sizzling grills and a soundtrack of old records.",
+        "scenes": [
+          "a sunset over city rooftops in bands of orange and mustard",
+          "a retro diner-style grill with skewers sizzling",
+          "friends at a laneway table under a warm glowing arch sign"
+        ],
+        "layout": "three arched panels side by side like retro windows"
+      },
+      "card": {
+        "front": "the full logo on warm vintage cream",
+        "back": "three rounded horizontal stripes in burnt orange, mustard and cocoa with placeholder contact lines on the cream band",
+        "material": "thick matte card with rounded corners",
+        "scene": "on a vintage formica table with a retro glass bottle"
+      },
+      "imagery": "warm film-tone photography with grain and sun flare",
+      "avoid": ["neon", "cold blues", "minimalist sans-serif"]
+    }
+  ]
+}

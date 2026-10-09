@@ -1,0 +1,3 @@
+The reference image is the approved {name} logo. Produce this variation of it: <variation — pick a line from references/asset-catalog.md "Logo variations", e.g. "reversed: the whole logo in solid warm off-white on a solid flat deep teal background filling the frame">.
+
+Reproduce the logo artwork exactly — the same symbol, the same letterforms, the same proportions and spacing, the brand name spelled exactly "{name}". Do not redraw, restyle, simplify or add anything; only <what changes — colour / which parts are shown / the container shape>. Flat vector rendering, solid flat colours, centred with generous empty margin, nothing else in the image. no tagline, no other text, no gradients, no shadows, no 3D, no texture, no mockup, no watermark.

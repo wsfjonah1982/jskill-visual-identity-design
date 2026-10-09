@@ -1,0 +1,9 @@
+Brand story graphic for {name}, a {industry} business: {business_idea}. One cohesive editorial illustration poster, laid out as {story_layout}, telling the brand's story visually: {story_scenes}.
+
+The reference image is the {name} logo. Place it exactly as given — same symbol, same letterforms, same colours, the name spelled "{name}" — small and centred at the bottom of the poster. Do not redraw or restyle it.
+
+The only text in the image is the logo and one headline across the top, spelled exactly: "{story_headline}". Headline lettering: {typography_feel}.
+
+{style_descriptor}. Colours strictly from the brand palette: {palette}. Imagery: {imagery}.
+
+no other text, no captions, no paragraphs, no labels, no random lettering, no other logos or brand names, no watermark. {avoid}.

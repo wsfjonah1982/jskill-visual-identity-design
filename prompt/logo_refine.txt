@@ -1,0 +1,6 @@
+Refine the logo in the reference image into a final, production-ready logo for "{name}".
+
+Keep exactly: the concept, the overall composition, the symbol idea and the letterform style — this is a refinement, not a redesign.
+Change: <specific refinements — e.g. simplify the symbol to a single even-weight line, tighten letter spacing, align the symbol's height to the cap height, remove inner detail that won't survive at small sizes>.
+
+Render as crisp flat vector artwork in {primary_color} only, centred on a plain pure white background with generous empty margin. The brand name spelled exactly "{name}", every letter correct. One single logo only. no tagline, no other text, no gradients, no shadows, no 3D, no texture, no mockup, no watermark.

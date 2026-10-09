@@ -1,0 +1,112 @@
+{
+  "maas_api_endpoint": "https://ark.ap-southeast.bytepluses.com/api/v3",
+  "image_model_id": "dola-seedream-5-0-pro-260628",
+  "image_size": "2K",
+  "image_formats": {
+    "auto": "2K",
+    "square": "2048x2048",
+    "landscape": "2816x1584",
+    "wide_3x2": "2496x1664",
+    "portrait": "1584x2816",
+    "post_4x5": "1824x2280",
+    "print_3x4": "1776x2368"
+  },
+  "watermark": false,
+  "styles": [
+    "Modern Geometric",
+    "Swiss / International Minimal",
+    "Luxury Editorial",
+    "Warm Organic / Natural",
+    "Playful & Friendly",
+    "Tech / Gradient Futurism",
+    "Heritage / Vintage Craft",
+    "Bold Brutalist",
+    "Japanese Minimal",
+    "Retro 70s",
+    "Hand-drawn Illustrative",
+    "Corporate Trust"
+  ],
+  "default_style": "Modern Geometric",
+  "design_set": {
+    "idea_count": 5,
+    "workers": 3,
+    "assets": [
+      {
+        "id": "logo",
+        "label": "Logo",
+        "template": "idea_logo.txt",
+        "format": "square",
+        "reference": null
+      },
+      {
+        "id": "story",
+        "label": "Brand story graphic",
+        "template": "idea_story.txt",
+        "format": "landscape",
+        "reference": "logo"
+      },
+      {
+        "id": "card",
+        "label": "Business card",
+        "template": "idea_card.txt",
+        "format": "wide_3x2",
+        "reference": "logo"
+      }
+    ]
+  },
+  "evaluation_criteria": [
+    {
+      "id": "fit",
+      "label": "Business fit",
+      "weight": 20,
+      "description": "Right for this industry, business type and audience — a customer would guess what the business does and trust it."
+    },
+    {
+      "id": "distinct",
+      "label": "Distinctiveness",
+      "weight": 15,
+      "description": "Stands apart from the category's clichés and competitors; ownable."
+    },
+    {
+      "id": "memorable",
+      "label": "Memorability",
+      "weight": 15,
+      "description": "Simple, describable in one sentence, easy to recall after one look."
+    },
+    {
+      "id": "versatile",
+      "label": "Versatility",
+      "weight": 10,
+      "description": "Logo still reads at favicon size, in one colour, and reversed."
+    },
+    {
+      "id": "craft",
+      "label": "Visual appeal & craft",
+      "weight": 15,
+      "description": "Balanced, well-proportioned, polished letterforms and colour; no generation flaws (misspellings, artefacts)."
+    },
+    {
+      "id": "story",
+      "label": "Story clarity",
+      "weight": 10,
+      "description": "The brand story graphic communicates who the business is and why it matters at a glance."
+    },
+    {
+      "id": "card",
+      "label": "Business card",
+      "weight": 10,
+      "description": "The card looks professional, printable and on-brand."
+    },
+    {
+      "id": "coherence",
+      "label": "Coherence",
+      "weight": 5,
+      "description": "Logo, story graphic and card clearly belong to one brand."
+    }
+  ],
+  "tos_endpoint": "tos-ap-southeast-1.bytepluses.com",
+  "tos_region": "ap-southeast-1",
+  "tos_bucket": "portobuild",
+  "tos_key_prefix_template": "site/brand/{slug}",
+  "local_publish_dir": ""
+}

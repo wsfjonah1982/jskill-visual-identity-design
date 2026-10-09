@@ -1,0 +1,7 @@
+Photorealistic brand mockup for {name}: <the application and its scene — object, material, setting, e.g. "a matte frosted-glass serum bottle with a pump top standing on a wet grey stone by the sea at dawn">.
+
+The first reference image is the approved {name} logo. Apply it to the <surface> as <application method — printed / debossed / foil-stamped / embroidered / painted signage / on-screen UI>, at <placement and size>. Reproduce the logo exactly — same symbol, same letterforms, same proportions, the brand name spelled exactly "{name}". Do not redraw, restyle or add to it.
+Brand colours: {palette}<if a palette swatch is attached as the second reference: "— match the exact colours of the second reference image", otherwise delete this slot>. {style_descriptor}.
+<camera — shot size, angle, lens; lighting>. Photorealistic, premium product photography.
+
+The only branding visible is the {name} logo<optional — append: , plus this exact copy: "SHORT ALLOWED COPY" — otherwise delete this slot>. no other logos, no other brand names, no invented text, no random lettering, no watermark. {avoid}.

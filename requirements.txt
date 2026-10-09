@@ -1,0 +1,3 @@
+# Python 3.10+
+requests>=2.31
+Pillow>=10.1   # ImageFont.load_default(size=...) is used by make_palette_swatch.py
