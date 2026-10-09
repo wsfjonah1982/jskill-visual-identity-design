@@ -12,9 +12,13 @@ copies to DIR/<slug>/.
 Usage:
     python scripts/publish_site.py --dir _project/site --slug kino-kopi-evaluation
     python scripts/publish_site.py --dir _project/site --slug kino-kopi-evaluation --local-dir /mnt/share/sites
+    python scripts/publish_site.py --dir _project/site --slug kino-kopi-evaluation --overwrite   # republish
 
 Prints where the site now lives to stdout on success: the public URL with TOS,
 or a file:// URI to the index file when kept locally (per --index-name).
+
+A slug that already holds a site is refused unless --overwrite is passed, so one
+project (or another environment) can't silently replace another's page.
 
 After uploading, any object left under the site's prefix that isn't part of
 this build (a file the rebuild dropped or renamed) is deleted, so nothing
@@ -67,7 +71,8 @@ def load_tos_credentials() -> tuple[str, str]:
     return access_key, secret_key
 
 
-def publish_local(source_dir: Path, slug: str, root: Path | None, index_name: str) -> tuple[Path, int]:
+def publish_local(source_dir: Path, slug: str, root: Path | None, index_name: str,
+                  overwrite: bool = False) -> tuple[Path, int]:
     """Keep the site on the local file system. With no `root` it stays where it
     was built; otherwise <root>/<slug>/ is replaced with a fresh copy (the local
     equivalent of the stale-object pruning the TOS path does). Returns the index
@@ -83,6 +88,9 @@ def publish_local(source_dir: Path, slug: str, root: Path | None, index_name: st
     if not root.is_dir():
         raise NotADirectoryError(f"Local publish folder doesn't exist: {root}")
     if dest.exists():
+        if not overwrite:
+            raise FileExistsError(f"{dest} already holds a site. Pass --overwrite to replace it, "
+                                  f"or pick another --slug.")
         shutil.rmtree(dest)
     shutil.copytree(source, dest, ignore=shutil.ignore_patterns(*EXCLUDE_DIR_NAMES))
     return dest / index_name, sum(1 for f in dest.rglob("*") if f.is_file())
@@ -101,6 +109,8 @@ def main() -> int:
     parser.add_argument("--index-name", default="index.html", help="Entry file to report the public URL for")
     parser.add_argument("--keep-stale", action="store_true",
                         help="Don't delete objects under the site prefix that aren't in this build")
+    parser.add_argument("--overwrite", action="store_true",
+                        help="Replace a site already published under this slug (refused otherwise)")
     parser.add_argument("--local-dir",
                         help="Skip TOS and copy the site to LOCAL_DIR/<slug>/ (overrides config's local_publish_dir)")
     args = parser.parse_args()
@@ -128,7 +138,7 @@ def main() -> int:
             root = local_publish_root(config, args.local_dir)
             if not any(p.is_file() for p in source_dir.rglob("*")):
                 raise RuntimeError(f"No files found in {source_dir} — nothing to publish.")
-            index_path, copied = publish_local(source_dir, args.slug, root, args.index_name)
+            index_path, copied = publish_local(source_dir, args.slug, root, args.index_name, args.overwrite)
             location = index_path.as_uri()
             write_log(log_path, {
                 "timestamp": datetime.now(timezone.utc).isoformat(), "slug": args.slug,
@@ -157,6 +167,12 @@ def main() -> int:
 
         access_key, secret_key = load_tos_credentials()
 
+        existing = list_objects(endpoint, region, bucket, access_key, secret_key, prefix=key_prefix + "/")
+        if existing and not args.overwrite:
+            raise FileExistsError(
+                f"{len(existing)} object(s) already published under {key_prefix}/. Pass --overwrite to "
+                f"replace that site, or pick another --slug (e.g. add -v2 or the date).")
+
         published = []
         for path in sorted(source_dir.rglob("*")):
             if not path.is_file():
@@ -181,7 +197,7 @@ def main() -> int:
         pruned = []
         if not args.keep_stale:
             current = {f"{key_prefix}/{rel}" for rel in published}
-            for k in list_objects(endpoint, region, bucket, access_key, secret_key, prefix=key_prefix + "/"):
+            for k in existing:
                 if k not in current:
                     delete_object(endpoint, region, bucket, k, access_key, secret_key)
                     pruned.append(k)

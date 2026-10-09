@@ -134,7 +134,8 @@ python scripts/publish_site.py --dir _project/site --slug <company>-evaluation
 ```
 
 → `https://<tos_bucket>.<tos_endpoint>/site/brand/<slug>/index.html`, public-read, with HTML set
-to no-cache so a republish shows immediately. Stale files under the prefix are pruned, and
+to no-cache so a republish shows immediately. A slug that already holds a site is refused, so
+use a new slug per run and add `--overwrite` only to republish the same project. Stale files under the prefix are pruned, and
 `unpublish_site.py --slug <slug>` takes it down. Publishing makes the page public, so confirm
 first, especially when it carries a real company's trademark. Before publishing, grep the built
 HTML for "claude".

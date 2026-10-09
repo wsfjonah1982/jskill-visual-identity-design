@@ -1,4 +1,4 @@
-Brand story graphic for {name}, a {industry} business: {business_idea}. One cohesive editorial illustration poster, laid out as {story_layout}, telling the brand's story visually: {story_scenes}.
+Brand story graphic for {name}, a {industry} business: {business_idea}. One cohesive editorial illustration poster, laid out as {story_layout} — exactly those panels, each one a single uninterrupted image with no extra slivers or split frames — telling the brand's story visually: {story_scenes}.
 
 The reference image is the {name} logo. Place it exactly as given — same symbol, same letterforms, same colours, the name spelled "{name}" — small and centred at the bottom of the poster. Do not redraw or restyle it.
 

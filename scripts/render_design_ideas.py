@@ -132,6 +132,11 @@ def main() -> int:
             raise ValueError("nothing to render — check --ideas / --assets and brand.json ideas")
         for a in assets:
             resolve_image_size(config, a["format"])  # fail fast on a bad format name
+        if any(a["id"] == "card" for a in assets) and not any(
+                (brand_for_idea(brand, i["id"]).get("contact") or {}).values() for i in ideas):
+            print("Note: brand.json has no contact details, so the business cards will show grey "
+                  "placeholder lines. Add a \"contact\" object (name, title, phone, email, address) "
+                  "to print real details.", file=sys.stderr)
         style_refs = {i["id"]: style_reference(brand_for_idea(brand, i["id"]), project_dir) for i in ideas}
         missing_refs = sorted({str(p) for p in style_refs.values() if p and not p.exists()})
         if missing_refs:

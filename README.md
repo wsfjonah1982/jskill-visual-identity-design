@@ -95,6 +95,7 @@ JSON record to `_project/log/<output-name>.log`.
 ```bash
 python scripts/build_evaluation_page.py --output _project/site/index.html --image-dir _project/site/img
 python scripts/publish_site.py --dir _project/site --slug <company>-evaluation   # prints the public URL
+python scripts/publish_site.py --dir _project/site --slug <company>-evaluation --overwrite   # republish the same project
 python scripts/unpublish_site.py --slug <company>-evaluation
 ```
 

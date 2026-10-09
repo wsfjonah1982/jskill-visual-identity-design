@@ -129,6 +129,41 @@ any generated mark.
 
 ---
 
+## I-9: Story graphic gets extra slivers or split panels
+
+**Symptom**: a strip or panel carries a narrow second photo at its edge, or one panel is split
+into two frames.
+
+**Fix**: `idea_story.txt` already asks for "exactly those panels, each one a single uninterrupted
+image". Keep `story.layout` in `brand.json` to a count the model can hold (three panels or
+fewer), and re-roll with `--ideas N --assets story --force`.
+
+---
+
+## I-10: Business card shows only grey lines
+
+**Symptom**: the cards have no name, phone or email, just placeholder lines.
+
+**Cause**: `brand.json` has no `contact` object. This is deliberate: invented names and numbers
+come out misspelled and look real. `render_design_ideas.py` prints a note when it happens.
+
+**Fix**: add `"contact": {"name": ..., "title": ..., "phone": ..., "email": ..., "address": ...}`
+(company level or per idea) and re-roll the cards.
+
+---
+
+## I-11: A publish replaced another project's page
+
+**Symptom**: the shared link suddenly shows different ideas.
+
+**Cause**: two runs (or two environments) published to the same `--slug`.
+
+**Fix**: `publish_site.py` now refuses a slug that already holds a site unless `--overwrite` is
+passed. Give each run its own slug (`<company>-evaluation-v2`, or add the date); use
+`--overwrite` only to republish the same project.
+
+---
+
 ## Quick reference
 
 | Code | Issue | Quick fix |
@@ -142,3 +177,6 @@ any generated mark.
 | I-6 | Invented text/brands in mockups | Allow-list copy + `no invented text` |
 | I-7 | Needs transparency | Generate on white, remove bg after; never prompt "transparent" |
 | I-8 | Looks like an existing mark | Discard; trademark search before adoption |
+| I-9 | Extra slivers in story panels | ≤ 3 panels; re-roll the story |
+| I-10 | Card has only grey lines | Add `contact` to `brand.json` |
+| I-11 | Publish replaced another page | Unique `--slug`; `--overwrite` only to republish |

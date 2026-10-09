@@ -6,7 +6,7 @@ Front of the card: {card_front}.
 Back of the card: {card_back}.
 {card_contact}.
 
-Standard 85 x 55 mm card, {card_material}. Colours from the brand palette: {palette}. {style_descriptor}.
+Standard 85 x 55 mm card, {card_material}. Colours strictly from the brand palette: {palette} — no other colours on either side of the card, including icons and patterns. {style_descriptor}.
 Soft natural light, top-down view at a slight angle, shallow depth of field, premium print photography.
 
 no other logos, no other brand names, no slogans, no random lettering, no watermark. {avoid}.
