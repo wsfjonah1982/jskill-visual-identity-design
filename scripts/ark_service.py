@@ -98,6 +98,17 @@ def palette_phrase(palette: list[dict]) -> str:
     return ", ".join(f"{c.get('description') or c.get('name')} ({c['hex'].upper()})" for c in palette)
 
 
+IDEA_ID_RE = re.compile(r"[A-Za-z0-9-]{1,32}")
+
+
+def validate_idea_ids(brand: dict) -> None:
+    """Idea ids become parts of file names (idea{id}_logo.png, prompt files): only short
+    alphanumeric ids are allowed, so an id can never point outside the project folder."""
+    for idea in brand.get("ideas") or []:
+        if not IDEA_ID_RE.fullmatch(str(idea.get("id", ""))):
+            raise ValueError(f"Invalid idea id {idea.get('id')!r}: use 1-32 letters, digits or hyphens")
+
+
 def brand_for_idea(brand: dict, idea_id) -> dict:
     """The company-level facts in brand.json merged with one entry of its `ideas` list (matched
     by `id`) — the idea's keys win. Every template and builder works on this merged view, so a

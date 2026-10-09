@@ -9,7 +9,7 @@ from pathlib import Path
 
 from ark_service import (
     BRAND_PATH, PROMPT_LIBRARY_DIR, brand_for_idea, brand_vars, configure_console, fill_template,
-    load_brand, load_config, resolve_image_size,
+    load_brand, load_config, resolve_image_size, validate_idea_ids,
 )
 
 configure_console()
@@ -60,8 +60,11 @@ def style_reference(merged: dict, project_dir: Path) -> Path | None:
     ref = merged.get("style_reference") or {}
     if not ref.get("file"):
         return None
-    path = Path(ref["file"])
-    return path if path.is_absolute() else project_dir / path
+    path = (project_dir / ref["file"]).resolve()
+    # The file is uploaded to the image API, so it must be an image inside the project folder.
+    if not path.is_relative_to(project_dir.resolve()) or path.suffix.lower() not in {".png", ".jpg", ".jpeg", ".webp"}:
+        raise ValueError(f"style_reference.file must be an image inside the project folder: {ref['file']}")
+    return path
 
 
 def run_asset(idea_id, asset: dict, prompt: Path, out_dir: Path, log_dir: Path,
@@ -110,6 +113,7 @@ def main() -> int:
         config     = load_config()
         design_set = config["design_set"]
         brand      = load_brand(brand_path)
+        validate_idea_ids(brand)
         missing = [k for k in ("name", "industry", "business_type", "business_idea") if not str(brand.get(k, "")).strip()]
         if missing:
             raise ValueError(f"brand.json is missing required company inputs: {', '.join(missing)}")

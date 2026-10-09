@@ -22,6 +22,9 @@ ASSET_SECTIONS = [
 ]
 
 
+IMAGE_EXT = {".png", ".jpg", ".jpeg", ".webp", ".gif"}
+
+
 # ---- colour maths -----------------------------------------------------------------------------
 
 def rel_luminance(rgb):
@@ -79,9 +82,13 @@ def render_assets(items, project_dir: Path, out_dir: Path, embed: bool, missing:
     for item in items:
         if isinstance(item, str):
             item = {"file": item}
-        file = Path(item["file"])
-        if not file.is_absolute():
-            file = project_dir / file
+        file = (project_dir / item["file"]).resolve()
+        # brand.json is editable input and --embed inlines file bytes into a page that may be
+        # published: only image files inside the project folder are allowed, so a path like
+        # "../../credential.json" can never leak into the HTML.
+        if not file.is_relative_to(project_dir.resolve()) or file.suffix.lower() not in IMAGE_EXT:
+            print(f"Warning: skipping asset outside the project folder or not an image: {item['file']}", file=sys.stderr)
+            continue
         if not file.exists():
             missing.append(str(file))
             continue

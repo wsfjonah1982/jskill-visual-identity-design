@@ -12,7 +12,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from ark_service import BRAND_PATH, configure_console, load_brand, load_config
+from ark_service import BRAND_PATH, configure_console, load_brand, load_config, validate_idea_ids
 
 configure_console()
 
@@ -68,6 +68,7 @@ def main() -> int:
     try:
         config   = load_config()
         brand    = load_brand(brand_path)
+        validate_idea_ids(brand)
         criteria = config["evaluation_criteria"]
         assets   = [{"id": a["id"], "label": a["label"], "aspect": aspect_of(config, a.get("format"))}
                     for a in config["design_set"]["assets"]]
